@@ -4,7 +4,7 @@ import java.rmi.registry.Registry;
 public class MailClient {
     public static void main(String[] args) {
         try {
-            Registry registry = LocateRegistry.getRegistry("localhost");
+            Registry registry = LocateRegistry.getRegistry(1099);
             MailService stub = (MailService) registry.lookup("MailService");
             stub.sendEmail("example@example.com", "Hello, this is a test email!");
             System.out.println("Email sent successfully.");
